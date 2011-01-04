@@ -47,6 +47,7 @@ var loadBadges = function() {
 	$.tmpl("badgesTemplate", canned_badges).appendTo("#badges_wrapper_js");
 	$.tmpl("badgesTemplate", badges).appendTo("#badges_wrapper_js");
     });
+    return false;
 };
 
 $(document).ready(function() {
@@ -54,21 +55,33 @@ $(document).ready(function() {
     $.tmpl("badgesTemplate", canned_badges).appendTo("#badges_wrapper_js");
     loadBadges();
     $('#load').click(function() {
-	loadBadges();
-        return false;
+       loadBadges();
+       return false;
     });
+    $('#issuer').bind('click', function(){
+      window.open('/issuer/', 'issuer' + Math.round(Math.random()*1000), 'width=600,height=400,scrollbars=1,resizable=1,menubar=0');
+      return false;
+    })
 });
 </script>
 </head>
 
 <body>
 <div class="wrapper">
+  <a id="load" href="#">
+    Reload Badges
+  </a>
+  
   <div id="header">
     <h1 class="page_title">Welcome to your Badge backpack!</h1>
     <p class="description">
         Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin molestie tortor eu velit. Aliquam erat volutpat. Nullam ultrices, diam tempus vulputate egestas, eros pede varius leo, sed imperdiet lectus est ornare odio.
     </p>
-    <a href="#" id="load">Reload Badges</a>
+    
+    <a href="#" id="issuer" >
+      Issue Badges
+    </a>
+  
   </div>
   <div id="profile">
     <div class="pic">
