@@ -5,7 +5,7 @@
 ;Hub = (function() {
     var iframe = document.createElement("iframe");
 
-    iframe.src = "http://hub/hub.html";
+    iframe.src = "/hub/hub.html";
     iframe.style.display = 'none';
 
     var body = document.getElementsByTagName('body')[0];

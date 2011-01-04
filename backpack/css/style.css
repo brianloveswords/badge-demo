@@ -59,7 +59,7 @@
   
   #profile {
     float:left;
-    background:url(/images/gradient_profile.jpg) top center repeat-y;
+    background:url(../images/graddient_profile.jpg) top center repeat-y;
     width:960px;
     height:180px;
     padding-top:80px;
@@ -128,7 +128,7 @@
   
   
   .share {
-    background:url(/images/share.png) #ccc 3px center no-repeat;
+    background:url(../images/share.png) #ccc 3px center no-repeat;
     padding:5px;
     padding-left:20px;
     float:right;
@@ -138,7 +138,7 @@
   }
   
   .share:hover {
-        background:url(/images/share.png) #eee 3px center no-repeat;
+        background:url(../images/share.png) #eee 3px center no-repeat;
 
   }
   
