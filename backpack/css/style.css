@@ -1,0 +1,157 @@
+  .wrapper {
+    width:960px;
+    margin:auto;
+    font-family:helvetica;
+    line-height:20px;
+    font-size:13px;
+    color:#444;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top:5px;
+    margin-bottom:20px;
+    color:#666;
+    
+  }
+  
+  h1 { 
+    font-size:48px;
+    margin-top:10px;
+  }
+  
+  h2 {
+    margin-top:10px;
+    font-size:36px;
+  }
+  
+  h3 { 
+    font-size:24px;
+  }
+  
+  h4 {
+    font-size:18px;
+  }
+  
+  h4.issuer {
+    font-size:16px;
+  }
+  
+  .badge h3.title {
+    line-height:40px;
+  }
+  
+  a {
+    color: #666;
+  }
+  
+  a:hover {
+    color: #333;
+  }
+  
+  #header {
+    margin-top:40px;
+    border-bottom:1px solid #ccc;
+    float:left;
+  }
+  
+  #profile {
+    float:left;
+    background:url(/images/gradient_profile.jpg) top center repeat-y;
+    width:960px;
+    height:180px;
+    padding-top:80px;
+    padding-bottom:40px;
+    margin-bottom:40px;
+    border-bottom:1px solid #ccc;
+  }
+  
+  
+  #profile .pic { 
+    width:180px;
+    height:180px;
+    border:1px solid #efefef;
+  }
+  
+  .pic { 
+    width:120px;
+    height:120px;    
+   }
+   
+   .info {
+    width:680px;
+   }
+  
+  .pic, 
+  .info {
+    float: left;
+    margin-right:10px;
+  }
+  
+  .badge {
+    width:400px;
+    padding:10px;
+    float:left;
+    margin-right:20px;
+    margin-bottom: 20px;
+    border:1px solid #ccc;
+    -moz-border-radius:6px;
+    background:-moz-linear-gradient(top, #fff 20%, #ddd 100%);
+    -moz-box-shadow: 0px 2px 0 #666;
+  }
+
+  a#load {
+    float:right;
+    margin:20px;
+    padding:15px;
+    background:-moz-linear-gradient(top, #8dc63f 20%, #197b30 100%);
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    -moz-border-radius:6px;
+    text-decoration:none;
+    border:1px solid #666;
+    -moz-box-shadow: 0px 2px 0 #333;
+  }
+  
+  a#load:hover {
+      background:-moz-linear-gradient(top, #197b30 20%, #8dc63f 100%);
+      color:#fff;
+  }
+
+  .badge .info {
+    float: left;
+    width: 250px;
+  }
+  
+  
+  .share {
+    background:url(/images/share.png) #ccc 3px center no-repeat;
+    padding:5px;
+    padding-left:20px;
+    float:right;
+    border:1px solid #666;
+    -moz-border-radius:3px;
+    text-decoration:none;
+  }
+  
+  .share:hover {
+        background:url(/images/share.png) #eee 3px center no-repeat;
+
+  }
+  
+  #footer { 
+    float:left;
+    width:960px;
+    padding-top:20px;
+    border-top:1px solid #ccc;
+    text-align:center;
+  }
+  
+  #footer ul li {
+    list-style:none;
+    display:inline;
+    margin-right:20px;
+  }

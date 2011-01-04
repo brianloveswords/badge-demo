@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Badge Backpack</title>
+<link rel="stylesheet" href="/css/style.css" media="screen" />
+<script type="text/javascript" src="http://hub/jschannel/src/jschannel.js"></script>
+<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tmpl.js"></script>
+<script type="text/javascript">
+
+// provide some canned badges to give the appearance of having
+// existing badges from other providers. 
+var canned_badges = [
+    { 
+       title: "Grab The Viking By The Horns", 
+       issuer: "https://badger.mozilla.com/",
+       issuerName: "MoFo Insider Awards",
+       imageURL:"/images/vikinghorns.png"
+    },
+    {
+       title: "Chaotic Ball of Energy",
+       issuer: "https://badger.mozilla.com/",
+       issuerName: "MoFo Insider Awards",
+       imageURL:"/images/energyball.png"
+    },
+];
+
+// badge template
+var markup = "<div class='badge'> \
+                <div class='pic'> \
+                  <img src='${imageURL}' alt='badge' /> \
+                </div> \
+                <div class='info'> \
+                  <h3 class='title'>${title}</h3> \
+                  <h4 class='issuer'> \
+                   <a href='${issuer}' title=''>${issuerName}</a> \
+                  </h4> \
+                  <a href='#' class='share'>share it!</a> \
+                </div> \
+              </div>";
+
+var loadBadges = function() {
+    $("#badges_wrapper_js").html("");
+    Hub.getBadges("", function(badges) {
+	$.template("badgesTemplate", markup);
+	$.tmpl("badgesTemplate", canned_badges).appendTo("#badges_wrapper_js");
+	$.tmpl("badgesTemplate", badges).appendTo("#badges_wrapper_js");
+    });
+};
+
+$(document).ready(function() {
+    $.template("badgesTemplate", markup);
+    $.tmpl("badgesTemplate", canned_badges).appendTo("#badges_wrapper_js");
+    loadBadges();
+    $('#load').click(function() {
+	loadBadges();
+        return false;
+    });
+});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+  <div id="header">
+    <h1 class="page_title">Welcome to your Badge backpack!</h1>
+    <p class="description">
+        Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin molestie tortor eu velit. Aliquam erat volutpat. Nullam ultrices, diam tempus vulputate egestas, eros pede varius leo, sed imperdiet lectus est ornare odio.
+    </p>
+    <a href="#" id="load">Reload Badges</a>
+  </div>
+  <div id="profile">
+    <div class="pic">
+      <img src="/images/mark.jpg" alt="profile pic" />
+    </div>
+    <div class="info">
+      <h2 id="name">Mark Surman</h2>
+      <p class="description">
+    Executive Director, Mozilla Foundation
+      </p>
+    </div>
+  </div>
+  <div id="badges_wrapper_js">
+  </div>
+    <div id="footer">
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>faq</li>
+        <li>contacts</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="container"></div>
+</body>
+<script type="text/javascript" src="http://hub/src/hub.js"></script>
+</html>
