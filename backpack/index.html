@@ -34,20 +34,21 @@ var markup = "<div class='badge'> \
                 <div class='info'> \
                   <h3 class='title'>${title}</h3> \
                   <h4 class='issuer'> \
-                   <a href='${issuer}' title=''>${issuerName}</a> \
+                   <a href='${issuer}' title='' target='_blank'>${issuerName}</a> \
                   </h4> \
                   <a href='#' class='share'>share it!</a> \
                 </div> \
               </div>";
 
 var loadBadges = function() {
-    $("#badges_wrapper_js").html("");
+    var wrapper = $("#badges_wrapper_js");
     Hub.getBadges("", function(badges) {
-	$.template("badgesTemplate", markup);
-	$.tmpl("badgesTemplate", canned_badges).appendTo("#badges_wrapper_js");
-	$.tmpl("badgesTemplate", badges).appendTo("#badges_wrapper_js");
+	var dummy = $('<div/>');
+        $.template("badgesTemplate", markup);
+	$.tmpl("badgesTemplate", canned_badges).appendTo(dummy);
+	$.tmpl("badgesTemplate", badges).appendTo(dummy);
+        wrapper.html(dummy.html());
     });
-    return false;
 };
 
 $(document).ready(function() {
