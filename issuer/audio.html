@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Congratulations! You are an audio editor.</title>
+    <script src="badges.js"></script>
+    <script src="/hub/jschannel/src/jschannel.js"></script>
+  </head>
+  <body>
+    <hgroup>
+      <h1>Congratulations!</h1>
+      <h2>You have been awarded the Audio Editor badge.</h2>
+    </hgroup>
+    <p>Check your badge backpack.</p>
+  </body>
+  <script src="/hub/src/hub.js"></script>
+  <script>
+    var global = this;
+    Hub.saveBadge(global.badges.audio, function(){alert('added audio badge');});
+  </script>
+</html>  
